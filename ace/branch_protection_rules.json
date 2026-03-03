@@ -6,9 +6,8 @@
     "ref_name": {
       "include": [
         "main",
-        "pro",
-        "qas",
-        "pre"
+        "amitithelpdesk-patch-1",
+        "blueocean",
       ],
       "exclude": []
     }
