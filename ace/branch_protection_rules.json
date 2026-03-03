@@ -1,0 +1,43 @@
+{
+  "name": "ace-branch-protection",
+  "target": "branch",
+  "enforcement": "active",
+  "conditions": {
+    "ref_name": {
+      "include": [
+        "main",
+        "amitithelpdesk-patch-1",
+        "blueocean",
+      ],
+      "exclude": []
+    }
+  },
+  "rules": [
+    {
+      "type": "pull_request",
+      "parameters": {
+        "required_approving_review_count": 2,
+        "dismiss_stale_reviews_on_push": true,
+        "require_code_owner_review": true
+      }
+    },
+    {
+      "type": "required_status_checks",
+      "parameters": {
+        "required_checks": [
+          "jenkins-build",
+          "security-scan"
+        ],
+        "strict_required_status_checks_policy": true
+      }
+    },
+    {
+      "type": "non_fast_forward",
+      "parameters": {}
+    },
+    {
+      "type": "deletion",
+      "parameters": {}
+    }
+  ]
+}
